@@ -8,7 +8,7 @@ public class Pessoa {
 	private String nome;
 	private String nivelAtividade;
 	
-	private String genero;
+	private char genero;
 	
 	private double altura;
 	private double peso;
@@ -22,16 +22,61 @@ public class Pessoa {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+		
 	}
 
 	public String getNivelAtividade() {
 		return nivelAtividade;
+		
 	}
+	
+	/**
+	 * @return
+	 */
+	public double getStatusNivelAtividade() {
+			
+			if(this.getNivelAtividade() == "NENHUMA" && this.getGenero() == 'M'){
+				return this.calcularNcd();
+				} else if(this.getNivelAtividade() == "LEVE" && this.getGenero() == 'M') {
+				return this.calcularNcd() * 1.5;
+				} else if(this.getNivelAtividade() == "MODERADA" && this.getGenero() == 'M') {
+				return this.calcularNcd() * 1.8;
+				} else if(this.getNivelAtividade() == "INTENSA" && this.getGenero() == 'M') {
+				return this.calcularNcd() * 2.1;
+				} else if(this.getNivelAtividade() == "NENHUMA" && this.getGenero() == 'F'){
+				return this.calcularNcd();
+				} else if(this.getNivelAtividade() == "LEVE" && this.getGenero() == 'F') {
+				return this.calcularNcd() * 1.6;
+				} else if(this.getNivelAtividade() == "MODERADA" && this.getGenero() == 'F') {
+				return this.calcularNcd() * 1.6;
+				} else if(this.getNivelAtividade() == "INTENSA" && this.getGenero() == 'F') {
+				return this.calcularNcd() * 1.8;
+				} else {
+				return 00;
+				}
+				
+			
+			
+			
+			
+		}
+	
 
 	public void setNivelAtividade(String nivelAtividade) {
 		this.nivelAtividade = nivelAtividade;
+		if (this.getGenero() == 'M' && this.getNivelAtividade() == "NENHUMA") {
+		} else if(this.getGenero() == 'M' && this.getNivelAtividade() == "LEVE") {
+		} else if(this.getGenero() == 'M' && this.getNivelAtividade() == "MODERADA") {
+		} else if(this.getGenero() == 'M' && this.getNivelAtividade() == "INTENSA") {
+		} else if(this.getGenero() == 'F' && this.getNivelAtividade() == "NENHUMA")	{
+		} else if(this.getGenero() == 'F' && this.getNivelAtividade() == "LEVE") {
+		} else if(this.getGenero() == 'F' && this.getNivelAtividade() == "MODERADA") {
+		} else if(this.getGenero() == 'F' && this.getNivelAtividade() == "INTENSA") {	
+		}else {
+			System.out.println("Especifique seu nível de atividade ");
+		}
 	}
-
+	
 	// Altura
 	public void setAltura(double altura) {
 		this.altura = altura;
@@ -52,13 +97,16 @@ public class Pessoa {
 	
 	
 	// Gênero
-	public void setGenero (String genero) {
+	public void setGenero (char genero) {
 		this.genero = genero;
 	}
 	
-	public String getGenero() {
+	public char getGenero() {
 		return genero;
 	}
+	
+	
+	
 	
 	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
@@ -100,13 +148,22 @@ public class Pessoa {
 	
 	// NCD
 	public double calcularNcd() {
-		
-		
-		
-		
-		return 0;
-	}
-}
+		if(this.getGenero() == 'M' && this.getIdade() >= 14 && this.getIdade() <= 30) {
+			return 15.3 * this.getPeso() + 679;
+			} else if(this.getGenero() == 'M' && this.getIdade() > 30 && this.getIdade() <= 60) {
+			return 11.6 * this.getPeso() + 879;
+			} else if(this.getGenero() == 'M' && this.getIdade() > 60) {
+			return 13.5 * this.getPeso() + 487;
+			} else if(this.getGenero() == 'F' && this.getIdade() >= 14 && this.getIdade() <= 30){
+			return 14.7 * this.getPeso() + 496;
+			} else if(this.getGenero() == 'F' && this.getIdade() > 30 && this.getIdade() <= 60) {
+			return 8.7 * this.getPeso() + 829;
+			} else if(this.getGenero() == 'F' && this.getIdade() > 60) {
+			return 10.5 * this.getPeso() + 596;
+			} else {
+			return 0;
+			}
+			}
 
-	
+}	
 
