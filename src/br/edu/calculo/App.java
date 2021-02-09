@@ -2,6 +2,7 @@ package br.edu.calculo;
 
 import java.time.LocalDate;
 
+
 import br.edu.calculo.gui.FrameCalculo;
 import br.edu.calculo.model.Pessoa;
 
@@ -9,8 +10,8 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		//FrameCalculo tela = new FrameCalculo();
-		//tela.criarTela();
+		FrameCalculo telaCalculo = new FrameCalculo();
+		telaCalculo.criarTela();
 	
 		
 		Pessoa aluno = new Pessoa();
