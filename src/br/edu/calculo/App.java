@@ -10,8 +10,8 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		FrameCalculo telaCalculo = new FrameCalculo();
-		telaCalculo.criarTela();
+	//	FrameCalculo telaCalculo = new FrameCalculo();
+	//	telaCalculo.criarTela();
 	
 		
 		Pessoa aluno = new Pessoa();
@@ -25,7 +25,7 @@ public class App {
 		System.out.println(aluno.getStatusImc());
 		aluno.setNivelAtividade("MODERADA");
 		System.out.println("Nivel de atividade: " + aluno.getNivelAtividade());
-		System.out.println("NDC: " + aluno.getStatusNivelAtividade());
+		System.out.println("NDC: " + aluno.calcularNcd());
 		
 
 		

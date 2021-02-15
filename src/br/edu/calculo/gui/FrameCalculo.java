@@ -1,18 +1,14 @@
 package br.edu.calculo.gui;
-
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-	
 import br.edu.calculo.model.nivelDeAtividade;
 import br.edu.calculo.model.Pessoa;
-
 
 public class FrameCalculo {
 	
@@ -33,7 +29,6 @@ public class FrameCalculo {
 			JTextField textNome = new JTextField();
 			textNome.setBounds(60, 10, 300, 30);
 			
-
 			//Criação do Label "Data de Nascimento"
 			JLabel labeldataNascimento = new JLabel();
 			labeldataNascimento.setText("Data de Nascimento:");
@@ -43,12 +38,17 @@ public class FrameCalculo {
 			JTextField textdataNascimento = new JTextField();
 			textdataNascimento.setBounds(140, 60, 220, 30);
 			
+			//Criação do Label "Gênero"
+			JLabel labelGenero = new JLabel();
+			labelGenero.setText("Gênero:");
+			labelGenero.setBounds(10, 110, 60, 30);
 			
 			//Adicionar e Exibir elementos na tela
 			telaCalculo.getContentPane().add(labelNome);
 			telaCalculo.getContentPane().add(textNome);
 			telaCalculo.getContentPane().add(labeldataNascimento);
 			telaCalculo.getContentPane().add(textdataNascimento);
+			telaCalculo.getContentPane().add(labelGenero);
 			telaCalculo.setVisible(true);
 		}
 
