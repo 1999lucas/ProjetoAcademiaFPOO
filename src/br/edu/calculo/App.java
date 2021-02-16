@@ -1,5 +1,6 @@
 package br.edu.calculo;
 
+import java.text.ParseException;
 import java.time.LocalDate;
 
 
@@ -8,13 +9,13 @@ import br.edu.calculo.model.Pessoa;
 
 public class App {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		
-	//	FrameCalculo telaCalculo = new FrameCalculo();
-	//	telaCalculo.criarTela();
+		FrameCalculo telaCalculo = new FrameCalculo();
+		telaCalculo.criarTela();
 	
 		
-		Pessoa aluno = new Pessoa();
+		/*Pessoa aluno = new Pessoa();
 		aluno.setNome("Maria");
 		aluno.setDataNascimento(LocalDate.of(1990, 05, 15));
 		aluno.setPeso(170);
@@ -24,8 +25,8 @@ public class App {
 		System.out.println(aluno.getImc());
 		System.out.println(aluno.getStatusImc());
 		aluno.setNivelAtividade("MODERADA");
-		System.out.println("Nivel de atividade: " + aluno.getNivelAtividade());
-		System.out.println("NDC: " + aluno.calcularNcd());
+		System.out.println("Nivel de atividade: " + aluno.getStatusNivelAtividade());
+		System.out.println("NDC: " + aluno.calcularNcd());*/
 		
 
 		

@@ -22,12 +22,31 @@ public class Pessoa {
 		this.nome = nome;	
 	}
 	//***Nível de Atividade***
-	public String getNivelAtividade() {
+	public String getStatusNivelAtividade() {
 		return nivelAtividade;	
 	}
 	
 	public void setNivelAtividade(String nivelAtividade) {
 		this.nivelAtividade = nivelAtividade;
+		if(this.getStatusNivelAtividade().equals("Nenhuma") && this.getGenero() == 'M') {
+			
+		} else if (this.getStatusNivelAtividade().equals("Leve") && this.getGenero() == 'M') {
+			
+		} else if (this.getStatusNivelAtividade().equals("Moderado") && this.getGenero() == 'M') {
+			
+		} else if (this.getStatusNivelAtividade().equals("Intenso") && this.getGenero() == 'M') {
+			
+		} else if(this.getStatusNivelAtividade().equals("Nenhuma") && this.getGenero() == 'F') {
+			
+		} else if (this.getStatusNivelAtividade().equals("Leve") && this.getGenero() == 'F') {
+			
+		}else if (this.getStatusNivelAtividade().equals("Moderado") && this.getGenero() == 'F') {
+			
+		}else if (this.getStatusNivelAtividade().equals("Intenso") && this.getGenero() == 'F') {
+			
+		}else {
+			System.out.println("Especifique o nível de atividade");
+		}
 	}
 	
 	//***Altura***
@@ -39,7 +58,6 @@ public class Pessoa {
 		return this.altura;
 	}
 	
-	
 	//***Peso***
 	public void setPeso(double peso) {
 		this.peso = peso;
@@ -48,10 +66,16 @@ public class Pessoa {
 		return peso;
 	}
 	
-	
 	//***Gênero***
 	public void setGenero (char genero) {
 		this.genero = genero;
+		if(this.getGenero() == 'F') {
+			
+		}else if(this.getGenero() == 'M') {
+			
+		}else {
+			System.out.println("Especifique o sexo");
+		}
 	}
 	
 	public char getGenero() {
@@ -114,24 +138,25 @@ public class Pessoa {
 			ncd = 10.5 * this.getPeso() + 596;
 		}else {
 			ncd=0;
-		}
-		 
-		if (this.getNivelAtividade().equals("Leve") && this.getGenero() == 'M') {
+		} if(this.getStatusNivelAtividade().equals("Nenhuma") && this.getGenero() == 'M') {
+			
+		} else if (this.getStatusNivelAtividade().equals("Leve") && this.getGenero() == 'M') {
 			ncd *= 1.5;
-		}else if (this.getNivelAtividade().equals("Moderado") && this.getGenero() == 'M') {
+		}else if (this.getStatusNivelAtividade().equals("Moderado") && this.getGenero() == 'M') {
 			ncd *= 1.8;
-		}else if (this.getNivelAtividade().equals("Intenso") && this.getGenero() == 'M') {
+		}else if (this.getStatusNivelAtividade().equals("Intenso") && this.getGenero() == 'M') {
 			ncd *= 2.1;
 		}
 		
-		if (this.getNivelAtividade().equals("Leve") && this.getGenero() == 'F') {
+		if(this.getStatusNivelAtividade().equals("Nenhuma") && this.getGenero() == 'F') {
+			
+		} else if (this.getStatusNivelAtividade().equals("Leve") && this.getGenero() == 'F') {
 			ncd *= 1.6;
-		}else if (this.getNivelAtividade().equals("Moderado") && this.getGenero() == 'F') {
+		}else if (this.getStatusNivelAtividade().equals("Moderado") && this.getGenero() == 'F') {
 			ncd *= 1.6;
-		}else if (this.getNivelAtividade().equals("Intenso") && this.getGenero() == 'F') {
+		}else if (this.getStatusNivelAtividade().equals("Intenso") && this.getGenero() == 'F') {
 			ncd *= 1.8;
 		}
 		return ncd;
-		
 	}
 }
